@@ -8,7 +8,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation 0.15422703574320182 0.12224493857860136 -0.9804438772503906 1.8203145851761935
-  position 0.23037525133495906 2.5550203860612295 1.557700413006051
+  position 0.04022042362786424 1.7441122919875596 1.2890146327008063
 }
 TexturedBackground {
 }
@@ -40,7 +40,7 @@ Solid {
 }
 Robot {
   translation -0.0773675392575615 0.3624399261259863 0.6999349985508341
-  rotation -0.00019955996927693067 4.8690607457289585e-05 0.9999999789025215 2.6630751940711654
+  rotation -0.00013064172572368343 3.1866678355405894e-05 0.9999999909586271 2.663074887707278
   children [
     HingeJoint {
       jointParameters HingeJointParameters {
@@ -60,7 +60,7 @@ Robot {
         }
       ]
       endPoint DEF EPUCK_LEFT_WHEEL Solid {
-        translation 0 0.025999999999999992 0.02
+        translation 0 0.025999999999999978 0.02
         rotation 0 0.9999999999999999 0 5.391261742208203
         children [
           DEF EPUCK_WHEEL Pose {
@@ -213,7 +213,7 @@ Robot {
         }
       ]
       endPoint DEF EPUCK_RIGHT_WHEEL Solid {
-        translation 0 -0.026 0.02
+        translation 0 -0.026000000000000027 0.02
         rotation 0 1 0 0.6992821659392292
         children [
           Pose {
@@ -1610,6 +1610,7 @@ Robot {
       0 0 0
     ]
   }
+  controller "epuck_go_forward"
   cpuConsumption 1.11
   remoteControl "e-puck_bluetooth"
 }
