@@ -78,3 +78,72 @@ Must manage:
 - Heat dissipation becomes a key challenge.
 - Passive: through the robot’s metal chassis
 - Active: using fans or other cooling mechanisms
+
+# Other Types of Actuators
+
+## Hydraulic and Pneumatic Actuators
+
+- Used in linear actuators, often for legged robots.
+- Can be electric, hydraulic, or pneumatic.
+- Common in heavy machinery, bipedal, and quadrupedal robots.
+- Hydraulic Actuators
+- Typically piston-based.
+- Known for high force output --> exceed electric motors.
+- Much larger than electric motors (tens of cm vs. mm scale).
+
+### Components
+
+- Tank filled with pressurized liquid (using gas as a buffer).
+- Compressor pump (usually powered by a DC motor).
+- Solenoid valves: one to release liquid into the actuator, one to let liquid escape.
+- Compressor re-pressurizes the system after actuation.
+
+Force output depends on:
+
+- Tank pressure and size
+- Tube diameter
+- Valve size
+
+Lower operational range than electric motors (less adaptable in speed/force). Low bandwidth --> less reactive than electric motors. Not ideal for human-populated environments due to slower reaction time. Difficult to control and expensive to maintain.
+
+**Pneumatic Actuators**
+
+Operate using compressed air instead of liquid.
+
+Require:
+
+- Compressor
+- Air tank
+- Valves for flow control
+
+Air is highly compressible --> poor for high-force applications. Lightweight and available in small sizes (e.g., mm-scale solenoid valves).
+Suitable for:
+
+- Small, intricate mechanisms (e.g., robotic fish, robotic hands)
+- Soft actuators with custom bending or torsional designs
+- Soft Actuators
+
+Made of flexible rubber with internal air cavities.
+
+Use materials that:
+
+- Are stiff in one direction (pulling)
+- Flexible in another (bending)
+
+Direct airflow to produce controlled bending or twisting.
+Not balloons --> change in volume is considered a failure mode.
+
+Goal: All air energy --> motion, not inflation.
+
+## Other Specialty Actuators
+
+- Shape-Memory Alloys (SMA)
+- Electroactive Polymers (EAP)
+- Piezo-elements
+
+Allow for extreme miniaturization.
+
+Downsides:
+
+- Poor energy-to-force ratios
+- Difficult to control
