@@ -11,8 +11,8 @@ WorldInfo {
   basicTimeStep 16
 }
 Viewpoint {
-  orientation -0.04070572426530183 0.9972270379276014 0.06229991041871068 1.1600445750437014
-  position -0.939064745482555 -0.12311263842442427 1.7297619093920438
+  orientation -0.22813327896728022 -0.24449353178680416 0.9424320240431412 4.722356195388955
+  position 0.16370752391717125 1.11014535702013 0.9867265933504126
 }
 TexturedBackground {
 }
@@ -20,6 +20,56 @@ TexturedBackgroundLight {
 }
 Floor {
   size 1 1
+}
+DEF dumbbell Solid {
+  translation 0.09 4.26334e-07 0.0899991
+  rotation 0 1 0 1.5708
+  children [
+    Group {
+      children [
+        Pose {
+          translation 0 0 -0.05
+          children [
+            Shape {
+              geometry Sphere {
+                radius 0.03
+                subdivision 2
+              }
+            }
+          ]
+        }
+        Pose {
+          translation 0 0 0.08
+          children [
+            Shape {
+              geometry Sphere {
+                radius 0.03
+                subdivision 2
+              }
+            }
+          ]
+        }
+        Shape {
+          geometry Cylinder {
+            height 0.1
+            radius 0.01
+          }
+        }
+      ]
+    }
+  ]
+  name "dumbbell"
+  contactMaterial "dumbbell"
+  boundingObject Box {
+    size 0.1 0.1 0.2
+  }
+  physics Physics {
+    density -1
+    mass 2
+    centerOfMass [
+      0 0 0.01
+    ]
+  }
 }
 Solid {
   translation 0 0.5 0.05
@@ -41,7 +91,7 @@ Solid {
   }
 }
 Solid {
-  translation 0 0 0.1
+  translation 0 0.24 0.04
   children [
     DEF MY_SHAPE Shape {
       appearance PBRAppearance {
