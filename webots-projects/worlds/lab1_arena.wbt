@@ -7,19 +7,25 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.5551893748615319 0.14782959810268295 -0.8184810125871345 2.712431155287205
-  position 0.2767214167318396 0.5933276684675629 2.335797099944168
+  orientation 0.3312207081775587 -0.2072639865101747 -0.9205077307498655 4.186785951681642
+  position 0.2786115573721246 -1.098953467175868 2.059109547428676
+}
+PointLight {
+  attenuation 0 0 1
+  intensity 0.3
+  location 0 1 1
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
+  luminosity 0
 }
 RectangleArena {
   translation -0.406153 0.409562 0.7
 }
 Solid {
-  translation -0.527838 0.234102 0.799961
-  rotation -1.1987213961378602e-07 -3.900916644548268e-07 0.9999999999999166 -1.5347583378195502
+  translation -0.5278380274277579 0.23410204958170233 0.7999607600066782
+  rotation 3.34692749961576e-12 1.089159536215516e-11 -1 1.5347583378194667
   children [
     DEF BOX Shape {
       appearance PBRAppearance {
@@ -39,12 +45,12 @@ Solid {
   }
 }
 Robot {
-  translation -0.343674 0.500578 0.699863
-  rotation -0.00013064172572368343 3.1866678355405894e-05 0.9999999909586271 2.663074887707278
+  translation -0.19226 0.483313 0.696819
+  rotation 0.00210424769560423 -0.0003383373260219381 0.9999977288321655 2.6702387212800254
   children [
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 30.52400297092655
+        position 65.66935154157281
         axis 0 1 0
         anchor 0 0 0.02
       }
@@ -60,8 +66,8 @@ Robot {
         }
       ]
       endPoint DEF EPUCK_LEFT_WHEEL Solid {
-        translation 0 0.025999999999999985 0.02
-        rotation 0 0.9999999999999999 0 5.391261742208203
+        translation 0 0.025999999999999926 0.02
+        rotation 0 1 0 2.8374984697769436
         children [
           DEF EPUCK_WHEEL Pose {
             rotation 1 0 0 -1.570796
@@ -197,7 +203,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 38.39839400901675
+        position 73.49160586233214
         axis 0 1 0
         anchor 0 0 0.02
       }
@@ -213,8 +219,8 @@ Robot {
         }
       ]
       endPoint DEF EPUCK_RIGHT_WHEEL Solid {
-        translation 0 -0.02600000000000004 0.02
-        rotation 0 1 0 0.6992821659392292
+        translation 0 -0.026000000000000103 0.02
+        rotation 0 -1 0 1.9066178238229015
         children [
           Pose {
             rotation 1 0 0 3.14159

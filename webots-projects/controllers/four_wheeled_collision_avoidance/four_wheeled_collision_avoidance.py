@@ -12,19 +12,17 @@ for i in range(2):
     ds[i].enable(TIME_STEP)
     
 wheels = []
-wheelsNames = ['Wheel_1', 'Wheel_2', 'Wheel_3', 'Wheel_4']
-
+wheelsNames = ['wheel_1', 'wheel_2', 'wheel_3', 'wheel_4']
 for i in range(4):
     wheels.append(robot.getDevice(wheelsNames[i]))
-    # print out the wheel names here
     wheels[i].setPosition(float('inf'))
     wheels[i].setVelocity(0.0)
     
 avoidObstacleCounter = 0
 
 while robot.step(TIME_STEP) != -1:
-    leftSpeed = 1.0
-    rightSpeed = 1.0
+    leftSpeed = 2.0
+    rightSpeed = 2.0
     if avoidObstacleCounter > 0:
         avoidObstacleCounter -= 1
         leftSpeed = 1.0
@@ -34,7 +32,7 @@ while robot.step(TIME_STEP) != -1:
             if ds[i].getValue() < 950.0:
                 avoidObstacleCounter = 100
                 
-    wheels[0].setVelocity(leftSpeed)
-    wheels[1].setVelocity(rightSpeed)
+    wheels[0].setVelocity(rightSpeed)
+    wheels[1].setVelocity(leftSpeed)
     wheels[2].setVelocity(leftSpeed)
     wheels[3].setVelocity(rightSpeed)

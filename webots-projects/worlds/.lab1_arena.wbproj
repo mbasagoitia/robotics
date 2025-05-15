@@ -6,6 +6,6 @@ maximizedDockId: -1
 centralWidgetVisible: 1
 orthographicViewHeight: 1
 textFiles: 1 "controllers/epuck_go_forward/epuck_go_forward.py" "controllers/basic_epuck_controller/basic_epuck_controller.py"
-globalOptionalRendering: LightPositions
+globalOptionalRendering: LightPositions::LightSensorRays
 consoles: Console:All:All
 renderingDevicePerspectives: e-puck:camera;1;1;0;0

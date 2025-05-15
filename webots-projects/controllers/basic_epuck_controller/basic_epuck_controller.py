@@ -2,34 +2,31 @@
 
 # You may need to import some classes of the controller module. Ex:
 #  from controller import Robot, Motor, DistanceSensor
-from controller import Robot
+from controller import Robot, LightSensor
 
-# create the Robot instance.
 robot = Robot()
 
-# get the time step of the current world.
 timestep = int(robot.getBasicTimeStep())
 
-# You should insert a getDevice-like function in order to get the
-# instance of a device of the robot. Something like:
 motor_left = robot.getDevice('left wheel motor')
 motor_right = robot.getDevice('right wheel motor')
-#  ds = robot.getDevice('dsname')
-#  ds.enable(timestep)
+
+ls_names = ["ls0", "ls1", "ls2", "ls3", "ls4", "ls5", "ls6", "ls7"]
+light_sensors = []
+
+for i in range(8):
+    light_sensors.append(robot.getDevice(ls_names[i]))
+    light_sensors[i].enable(timestep)
+
 motor_left.setPosition(float('inf'))
 motor_right.setPosition(float('inf'))
-# Main loop:
-# - perform simulation steps until Webots is stopping the controller
+
 while robot.step(timestep) != -1:
-    # Read the sensors:
-    # Enter here functions to read sensor data, like:
-    #  val = ds.getValue()
-
-    # Process sensor data here.
-
-    # Enter here functions to send actuator commands, like:
-    motor_left.setVelocity(5)
-    motor_right.setVelocity(10)
+    light_values = []
+    for i in range(8):
+        light_values.append(light_sensors[i].getValue())
+    print(light_values)
+    motor_left.setVelocity(light_values[7]/1000)
+    motor_right.setVelocity(light_values[0]/1000)
     pass
 
-# Enter here exit cleanup code.

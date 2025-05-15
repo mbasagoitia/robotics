@@ -8,8 +8,8 @@ WorldInfo {
   basicTimeStep 16
 }
 Viewpoint {
-  orientation 0.2643204832720727 0.00222235567706031 -0.9644323424989762 3.125375127170886
-  position 1.0620836718971218 0.005424115079270403 0.5469250029358904
+  orientation 0.49540345624129395 0.4201667709464364 -0.760286327732273 1.9961393838863222
+  position 0.13511497315725485 0.26453967393422134 0.9185046873814242
 }
 TexturedBackground {
 }
@@ -35,6 +35,7 @@ Solid {
   name "wall"
   boundingObject USE WALL
   physics Physics {
+    mass 1
   }
 }
 Solid {
@@ -44,6 +45,10 @@ Solid {
     USE WALL
   ]
   name "wall 2"
+  boundingObject USE WALL
+  physics Physics {
+    mass 1
+  }
 }
 Solid {
   translation 0.5 0 0.05
@@ -52,6 +57,10 @@ Solid {
     USE WALL
   ]
   name "wall 3"
+  boundingObject USE WALL
+  physics Physics {
+    mass 1
+  }
   translationStep 0
 }
 Solid {
@@ -61,13 +70,17 @@ Solid {
     USE WALL
   ]
   name "wall 4"
+  boundingObject USE WALL
+  physics Physics {
+    mass 1
+  }
 }
 Robot {
   translation 0 0 0.03
   children [
     DistanceSensor {
       translation 0.11 0.02 0
-      rotation 0 0 1 0.3
+      rotation 0 0 0.9999999999999999 0.3000000000000006
       children [
         Solid {
           children [
@@ -84,6 +97,7 @@ Robot {
         }
       ]
       name "ds_left"
+      numberOfRays 3
     }
     DistanceSensor {
       translation 0.11 -0.02 0
@@ -103,6 +117,7 @@ Robot {
         }
       ]
       name "ds_right"
+      numberOfRays 3
     }
     HingeJoint {
       jointParameters HingeJointParameters {
@@ -111,6 +126,7 @@ Robot {
       }
       device [
         RotationalMotor {
+          name "wheel_2"
         }
       ]
       endPoint Solid {
@@ -140,6 +156,7 @@ Robot {
       }
       device [
         RotationalMotor {
+          name "wheel_1"
         }
       ]
       endPoint Solid {
@@ -169,6 +186,7 @@ Robot {
       }
       device [
         RotationalMotor {
+          name "wheel_3"
         }
       ]
       endPoint Solid {
@@ -206,6 +224,7 @@ Robot {
       }
       device [
         RotationalMotor {
+          name "wheel_4"
         }
       ]
       endPoint Solid {
