@@ -23,3 +23,5 @@ FSMs can be hard to maintain and complex, and can thus be grouped into clusters 
 In practice, HFSMs are implemented in distinct processes that run independently and asynchronously. They can communicate using an inter-process communication (IPC) framework such as XMLRPC or REST, which are socket-based networking protocols that allow exchanging eXtended Markup Language (XML) or JavaScript Object Notation (JSON) data structures between two processes on the same or different computers using a networking interface. 
 
 In an FSM, the maximum number of state transitions relative to number of states N is N*N
+
+***Extended finite state machines** can be used when you cannot enumerate all states, add counters, variables, guard condition / action syntax, etc. to reuse states

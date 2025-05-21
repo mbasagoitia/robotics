@@ -67,3 +67,91 @@ A state transition from the "FOLLOW" state to the "FINISH" state
 
 
 A sensor event to detect when the light is reached
+
+What information is needed to define the orientation of an object in space?
+
+
+A three-axis coordinate system
+
+
+6 numbers
+
+
+Three translations and three rotations
+
+Correct
+Yes, specifying a three axis coordinate system is the only way to fully define a robot's orientation. There are many ways to do this and many only require four values. 
+
+You are given a coordinate system consisting of the vectors 
+(
+1
+,
+0
+,
+0
+)
+T
+(1,0,0) 
+T
+ left parenthesis, 1, comma, 0, comma, 0, right parenthesis, start superscript, T, end superscript and 
+(
+0
+,
+1
+,
+0
+)
+T
+(0,1,0) 
+T
+ left parenthesis, 0, comma, 1, comma, 0, right parenthesis, start superscript, T, end superscript. The coordinate system follows the right hand rule, what is the "z" component of the third vector 
+(
+x
+,
+y
+,
+z
+)
+T
+(x,y,z) 
+T
+ left parenthesis, x, comma, y, comma, z, right parenthesis, start superscript, T, end superscript?
+
+1
+Correct
+Yes, the third vector must be orthogonal to the other two and all three vectors need to be normal vectors. 
+
+A robot can only move forward and backwards as well as strafe left and right. How many degrees of freedom does it have? 
+
+
+2
+
+
+1
+
+
+4
+
+Correct
+Yes, the robot is able to move along two orthogonal axes of a coordinate system. Back-and-forth and left-and-right refer to the same degree of freedom (the same coordinate axes) and therefore are only two degrees of freedom. 
+
+Do additional motors always add degrees of freedom?
+
+
+Yes, as a rule of thumb, every motor adds a degree of freedom
+
+
+No, it depends on their exact configuration. 
+
+Correct
+Yes. Adding six motors behind each other will not add any degrees of freedom; worse, a robot could only turn by skidding (like a tank). The analog situation for a manipulator arm would be a motor that simply drives the same axis as another one. 
+
+A Swedish wheel can move forward by rotating around its x-axis and sideways by rotating around its y-axis. 
+
+
+Yes, the Swedish wheel has rollers, whose axes are perpendicular to the forward direction of the wheel. 
+
+
+No, the rollers of the Swedish wheel are mounted at a 45 degree angle to the forward direction of the wheel. **
+
+Correct
