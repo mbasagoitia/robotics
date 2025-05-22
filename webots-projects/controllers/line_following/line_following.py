@@ -19,6 +19,9 @@ timestep = int(robot.getBasicTimeStep())
 leftMotor = robot.getDevice("left wheel motor")
 rightMotor = robot.getDevice("right wheel motor")
 
+leftMotor.setPosition(float("inf"))
+rightMotor.setPosition(float("inf"))
+
 MAX_SPEED = 6.28
 
 gs = []
@@ -27,6 +30,8 @@ for i in range(3):
     gs.append(robot.getDevice("gs" + str(i)))
     gs[-1].enable(timestep)
 
+phildot = MAX_SPEED
+phirdot = MAX_SPEED
 # Main loop:
 # - perform simulation steps until Webots is stopping the controller
 while robot.step(timestep) != -1:
@@ -42,11 +47,11 @@ while robot.step(timestep) != -1:
     
     print(g)
     
-    if (g[0] > 500 and g[1] < 350 and g[2] > 500:
+    if (g[0] > 500 and g[1] < 350 and g[2] > 500):
         phildot, phirdot = MAX_SPEED, MAX_SPEED
-    elif (g[2] < 550)
+    elif (g[2] < 550):
         phildot, phirdot = 0.25 * MAX_SPEED, -0.1 * MAX_SPEED
-    elif (g[0] < 550)
+    elif (g[0] < 550):
         phildot, phirdot = -0.1 * MAX_SPEED, 0.25 * MAX_SPEED
     # Enter here functions to send actuator commands, like:
     #  motor.setPosition(10.0)
