@@ -49,3 +49,30 @@ All wheels can ADD degrees of freedom OR constraints
 
 Every motor/link usually adds a degree of freedom
 
+**Kinematics of the E-Puck**
+
+In differential-wheeled robots such as the e-puck, the change in the displacement of the robot (the center point) is given by:
+
+### Translation along x-axis
+
+delta x = r * phi1 / 2 + r * phi2 / 2
+
+where:
+
+- delta x = displacement
+- r = wheel radius
+- phi1 and phi2 are the angles at which the left and right wheels are turned, where 2pi radians is 1 full rotation
+
+### Rotation around z-axis
+
+To solve for the angle w itself, we can use
+
+wd = r phi right - r phi left
+
+where: angle of rotation times diameter (distance between the two wheels) equals arc length. Remember that a left turn (positive forward speed of right wheel) contributes to a positive move along the axis and vice versa. So the two terms cancel out when the two wheels are moving at the same speed (no angle of rotation)
+
+We cannot derive any equations for the y-axis translation because the robot does not have the proper wheels to move along its y-axis. The same holds for rotation around the x and y-axes and translation along the z-axis.
+
+## Static vs Dynamic Stability
+
+A **statically stable** mechanism will not fall even when not actuated. A **dynamically stable** robot instead requires constant actuation to prevent it from falling.

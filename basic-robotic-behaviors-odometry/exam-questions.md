@@ -155,3 +155,25 @@ Yes, the Swedish wheel has rollers, whose axes are perpendicular to the forward 
 No, the rollers of the Swedish wheel are mounted at a 45 degree angle to the forward direction of the wheel. **
 
 Correct
+
+Consider a robot that drives along its positive x-axis. This time, the z-axis is pointing downward toward the ground. Assume the wheelspeed of the left wheel (located on the negative y-axis) to be 3.14rad/s and the wheelspeed of the right wheel (located on the positive y-axis) to be -3.14rad/s. What is the sign of the rotation around the z-axis?
+
+
+Positive **
+
+
+Negative
+
+Correct
+Yes, using the second right hand rule and aligning your thumb with the z-axis, your fingers indicate the positive rotation direction to be clockwise. As the left wheel turns forward and the right wheel turns backward, the robot increases the angle of its orientation.
+
+Consider a robot, where the right wheel is moved 1cm forward, that is the wheels are no longer aligned on the y-axis of the robot. What happens? (If you want to try this in Webots, you will need to change the x-value of the "anchor" field in the hinge joint and the translation of the "endPoint" from 0 to 0.01)
+
+
+The pivot point of the robot changes from its center to be 0.5cm in front of the robot, but the robot maintains its two degrees of freedom **
+
+
+Moving one of the wheels off the center axis allows the robot to also move along its y-axis, thereby adding one degree of freedom. The robot now is able to actuate all three degrees of freedom on the plane. 
+
+
+Having one of the wheels "off center" prevents the robot from turning, allowing the robot to only drive straight, effectively reducing its degrees of freedom to one. 
