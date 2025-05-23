@@ -30,8 +30,14 @@ for i in range(3):
     gs.append(robot.getDevice("gs" + str(i)))
     gs[-1].enable(timestep)
 
-phildot = MAX_SPEED
-phirdot = MAX_SPEED
+phildot = 0
+phirdot = 0
+
+radius = 0.0201
+wheel_distance = 0.052
+
+total_distance = 0
+orientation = 0
 # Main loop:
 # - perform simulation steps until Webots is stopping the controller
 while robot.step(timestep) != -1:
@@ -45,7 +51,7 @@ while robot.step(timestep) != -1:
     for gsensor in gs:
         g.append(gsensor.getValue())
     
-    print(g)
+    # print(g)
     
     if (g[0] > 500 and g[1] < 350 and g[2] > 500):
         phildot, phirdot = MAX_SPEED, MAX_SPEED
@@ -55,6 +61,16 @@ while robot.step(timestep) != -1:
         phildot, phirdot = -0.1 * MAX_SPEED, 0.25 * MAX_SPEED
     # Enter here functions to send actuator commands, like:
     #  motor.setPosition(10.0)
+    timestep_distance = (((radius * phildot) + (radius * phirdot))/2) * (timestep/1000)
+    total_distance = total_distance + timestep_distance
+    
+    orientation_radians = (((radius * phirdot) - (radius * phildot))/ wheel_distance) * (timestep/1000)
+    orientation_degrees = orientation_radians / 3.14159 * 180
+    
+    orientation = orientation + orientation_degrees
+    
+    print(total_distance, orientation)
+    
     leftMotor.setVelocity(phildot)
     rightMotor.setVelocity(phirdot)
     pass
