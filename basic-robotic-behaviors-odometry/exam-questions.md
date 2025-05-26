@@ -177,3 +177,39 @@ Moving one of the wheels off the center axis allows the robot to also move along
 
 
 Having one of the wheels "off center" prevents the robot from turning, allowing the robot to only drive straight, effectively reducing its degrees of freedom to one. 
+
+When rotating the coordinate system, the basis vectors for the X and the Y-axis change, but the basis vector for the Z-axis stays constant  
+(
+0
+,
+0
+,
+1
+)
+T
+(0,0,1) 
+T
+ left parenthesis, 0, comma, 0, comma, 1, right parenthesis, start superscript, T, end superscript. Why is that? 
+
+
+Because the robot cannot move sideways, and the translation along the Y-Axis (the Z-axis before rotation) remains always zero. 
+
+
+Because the robot cannot move up. 
+
+
+As the angle increases, the projections for the X and Y-axis change, but the Z-axis of both coordinate systems remain the same. ** 
+
+Correct
+Yes, the Z-axis basis vector would only change if the robot would also rotate around the X or the Y-axis. 
+
+The dot product allows you to compute the cosine of the angle between vectors. How do we get to entries involving sine?
+
+
+The dot product only works in special cases, and other relationships need to be worked out based on the specific geometry of the problem. 
+
+
+Entries involving sine are derived directly from the world coordinate. 
+
+
+You can either stick to the cosine or reduce expressions to other  functions by relying on the periodicity of trigonometric functions. **
