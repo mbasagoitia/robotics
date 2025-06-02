@@ -450,7 +450,7 @@ Solid {
   model "rectangle arena"
 }
 Robot {
-  translation 1.59194e-08 0.012001 0.000386336
+  translation 0 0.028 0.000386336
   rotation 0.020296409154726344 -0.020296436287779322 0.9995879703405 1.571207114887051
   children [
     HingeJoint {
@@ -624,7 +624,7 @@ Robot {
         }
       ]
       endPoint DEF EPUCK_RIGHT_WHEEL Solid {
-        translation 0 -0.026000000000001074 0.02
+        translation 0 -0.026000000000001088 0.02
         rotation 0 1 0 4.217528350407358
         children [
           Pose {
