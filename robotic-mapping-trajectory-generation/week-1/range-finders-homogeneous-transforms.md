@@ -35,9 +35,10 @@ Many different technologies: laser, time-of-flight, stereo, etc.
 
 Pointcloud: x, y, z coordinates of each point
 
-## Summary
-
 - 2D and 3D range data is critical for navigation
 - Range information can be turned into a point cloud
 - Homogeneous transforms simplify notation and implementation
 - Large variety of range sensors are available
+
+## Range Finders and Coordinate Transforms
+
