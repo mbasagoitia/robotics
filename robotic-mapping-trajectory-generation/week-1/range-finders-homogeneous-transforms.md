@@ -39,6 +39,3 @@ Pointcloud: x, y, z coordinates of each point
 - Range information can be turned into a point cloud
 - Homogeneous transforms simplify notation and implementation
 - Large variety of range sensors are available
-
-## Range Finders and Coordinate Transforms
-
