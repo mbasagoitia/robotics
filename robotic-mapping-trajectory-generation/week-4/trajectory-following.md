@@ -20,8 +20,6 @@ arctan2 discontinuity: as soon as alpha exceeds 180 degrees, subtract 360 to put
 
 Turn error into wheel speed
 
-For a right turn, since alpha is already negative:
-
 - left wheel = -p1 * alpha + p2 * rho
 - right wheel = p1 * alpha + p2 * rho
 
