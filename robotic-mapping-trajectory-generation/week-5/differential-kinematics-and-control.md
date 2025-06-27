@@ -5,17 +5,17 @@ In differential kinematics, we are looking at the relationships of derivatives:
 - x: distance
 - x': speed/velocity
 
-x' = r * theta l'/2 + r * theta r'/2
-w' = (r * theta r' - r * theta l') / d
+x' = r * phi l'/2 + r * phi r'/2
+w' = (r * phi r' - r * phi l') / d
 
 Where:
 
 x' = speed of the robot
 w' = rotational speex
 r = wheel radius
-theta' = derivative of wheel orientation of each wheel (left and right)
+phi' = derivative of wheel orientation of each wheel (left and right)
 
-If we rearrange the above equations to solve for theta, we see that this is similar to the equations used to minimize the error of the robot's distance and angle from the target.
+If we rearrange the above equations to solve for phi, we see that this is similar to the equations used to minimize the error of the robot's distance and angle from the target.
 
 ## Minimizing Error
 
@@ -23,14 +23,14 @@ Finding the minimum of an error function involves walking along its gradient/der
 
 Minimizing the error function of the robot:
 
-- Control input to the robot are x' (forward speed of robot) and thetaR' (rotational speed of robot)
+- Control input to the robot are x' (forward speed of robot) and phiR' (rotational speed of robot)
 - Our error components are provided in polar coordinates
 - Directly applicable to robot controller
 - Solving for wheel speeds (inverse kinematics)
 - Compare with intuitive result
 
-- thetaL' = (2p * 2rho - p1 alpha d) / 2r
-- thetaR' = (2p * 2rho + p1 alpha d) / 2r
+- phiL' = (2p * 2rho - p1 alpha d) / 2r
+- phiR' = (2p * 2rho + p1 alpha d) / 2r
 
 ## Proportional Control
 
